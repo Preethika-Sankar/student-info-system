@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Info System</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Age</th>
+            <th>Grade</th>
+        </tr>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.email}"></td>
+            <td th:text="${student.course}"></td>
+            <td th:text="${student.age}"></td>
+            <td th:text="${student.grade}"></td>
+        </tr>
+    </table>
+
+    <h2>Add Student</h2>
+    <form th:action="@{/students}" th:object="${student}" method="post">
+        <input type="text" th:field="*{name}" placeholder="Name" required />
+        <input type="email" th:field="*{email}" placeholder="Email" required />
+        <input type="text" th:field="*{course}" placeholder="Course" required />
+        <input type="number" th:field="*{age}" placeholder="Age" required />
+        <input type="text" th:field="*{grade}" placeholder="Grade" required />
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
