@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.studentinfo.studentinfosystem.model.Student;
 import com.studentinfo.studentinfosystem.service.StudentService;
@@ -27,4 +28,9 @@ public class StudentController {
         studentService.saveStudent(student);
         return "redirect:/students";
     }
+    @PostMapping("/students/delete/{id}")
+public String deleteStudentViaPost(@PathVariable Long id) {
+    studentService.deleteStudentById(id);
+    return "redirect:/students";
+}
 }
