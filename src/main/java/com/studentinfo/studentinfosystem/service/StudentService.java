@@ -1,6 +1,7 @@
 package com.studentinfo.studentinfosystem.service;
 
 import com.studentinfo.studentinfosystem.model.Student;
+import com.studentinfo.studentinfosystem.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
