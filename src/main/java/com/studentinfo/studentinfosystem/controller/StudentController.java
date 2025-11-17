@@ -33,4 +33,17 @@ public String deleteStudentViaPost(@PathVariable Long id) {
     studentService.deleteStudentById(id);
     return "redirect:/students";
 }
+   @GetMapping("/students/edit/{id}")
+public String showEditForm(@PathVariable Long id, Model model) {
+    Student student = studentService.getStudentById(id);
+    model.addAttribute("student", student);
+    model.addAttribute("students", studentService.getAllStudents());
+    return "students";
+}
+
+@PostMapping("/students/update")
+public String updateStudent(@ModelAttribute Student student) {
+    studentService.saveStudent(student);
+    return "redirect:/students";
+}
 }
