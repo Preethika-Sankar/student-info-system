@@ -1,3 +1,11 @@
+package com.studentinfo.studentinfosystem.service;
+
+import com.studentinfo.studentinfosystem.model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
 public class StudentService {
 
