@@ -48,10 +48,9 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-    <groupId>org.apache.maven.shared</groupId>
-    <artifactId>maven-shared-utils</artifactId>
-    <version>3.3.4</version>
+      <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter</artifactId>
 </dependency>
     </dependencies>
 
