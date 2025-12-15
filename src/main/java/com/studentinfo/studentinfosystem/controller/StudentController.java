@@ -46,4 +46,5 @@ public String updateStudent(@ModelAttribute Student student) {
     studentService.saveStudent(student);
     return "redirect:/students";
 }
+
 }
